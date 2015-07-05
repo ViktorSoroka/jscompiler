@@ -1,4 +1,6 @@
-help
+Help:
 
-1) aaaaaaaaa
-2) bbbbbbbbb
+Options:
+
+1) --src - the path to the files to minify out
+2) --dest - the destination path
