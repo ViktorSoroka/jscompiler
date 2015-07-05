@@ -1,0 +1,35 @@
+#! /usr/bin/env node
+
+var args = require('optimist').argv;
+var path = require('path');
+var fs = require('fs');
+var colors = require("colors");
+var questionare = require("../questionare");
+var minificator = require("../minificator");
+
+if(args.help) {
+    fs.readFile(path.join(__dirname, '..', 'help.txt'), function (err, data) {
+        if (err) { throw  err;}
+        console.log(data.toString().green);
+        process.exit(0);
+    });
+}
+
+var config = {
+    src: args.src,
+    dest: args.dest
+};
+
+var questions = [{
+    key: 'src',
+    question: 'Please enter an absolute path to the source folder: '
+},{
+    key: 'dest',
+    question: 'Please enter an absolute path to the destination folder: '
+}];
+
+questionare(config, questions, function () {
+    minificator(config.src, config.dest);
+});
+
+

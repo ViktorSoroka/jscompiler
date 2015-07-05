@@ -1,0 +1,19 @@
+{
+  "name": "jscompiler",
+  "version": "0.0.1",
+  "author": "Soroka Viktor",
+  "main": "index.js",
+  "description": "asds",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "jscompiler": "./bin/jscompiler"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "optimist": "^0.6.1",
+    "minify": "1.4.18",
+    "glob": "5.0.10",
+    "filendir": "0.0.1"
+  }
+}
